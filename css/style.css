@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: #080808;
+}
+
+body.hidden-scrolling {
+  overflow-y: hidden;
+}
+
+::-webkit-scrollbar {
+  width: .8rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+i {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 0;
+}
+
+.header .logo p {
+  font-size: 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.header .logo p span {
+  color: #e63c3c;
+}
+
+.components {
+  padding-bottom: 62px;
+}
+
+.components .property-list-cards .filter {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.components .property-list-cards .filter span {
+  padding: .5rem;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
+  cursor: pointer;
+}
+
+.components .property-list-cards .filter span.active {
+  background: inherit;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.components .property-list-cards .property-card {
+  border-radius: 16px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.components .property-list-cards .property-card.hide {
+  display: none;
+}
+
+.components .property-list-cards .property-card.show {
+  display: block;
+  -webkit-animation: fade-in .5s ease;
+          animation: fade-in .5s ease;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-25px);
+            transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.components .property-list-cards .property-card .fav {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+}
+
+.components .property-list-cards .property-card .fav:hover {
+  color: #e63c3c;
+}
+
+.components .property-list-cards .property-card .card-img {
+  height: 280px;
+}
+
+.components .property-list-cards .property-card .card-img img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.components .property-list-cards .property-card .details {
+  padding: 2rem 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.components .property-list-cards .property-card .details .name h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: .5rem;
+}
+
+.components .property-list-cards .property-card .details .name p {
+  color: #2c2c2c;
+}
+
+.components .property-list-cards .property-card .details .price {
+  min-width: 132px;
+}
+
+.components .property-list-cards .property-card .details .price > div {
+  margin-bottom: .5rem;
+  text-align: right;
+}
+
+.components .property-list-cards .property-card .details .price .rating {
+  color: #f8a814;
+}
+
+.components .property-list-cards .property-card .details .price .rating i {
+  font-size: 14px;
+}
+
+.components .property-list-cards .property-card .purchase {
+  display: none;
+}
+
+.components .property-list-cards .property-card .purchase.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  background: #fff;
+  z-index: 100;
+  overflow-y: scroll;
+  padding-bottom: 6rem;
+  display: block;
+}
+
+.components .property-list-cards .property-card .purchase.active .prop-card-close {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.components .property-list-cards .property-card .purchase.active .main-image {
+  height: 380px;
+}
+
+.components .property-list-cards .property-card .purchase.active .main-image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom-right-radius: 100px;
+}
+
+.components .property-list-cards .property-card .purchase.active .prop-details {
+  padding: 1.5rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .prop-details h2,
+.components .property-list-cards .property-card .purchase.active .prop-details p {
+  margin-bottom: 1rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .more-photos {
+  padding-left: 1.5rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .more-photos h2 {
+  margin-bottom: 1rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .more-photos .photos {
+  gap: 1.5rem;
+  overflow-x: scroll;
+  padding-right: 1.5rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .more-photos .photos::-webkit-scrollbar-track {
+  display: none;
+}
+
+.components .property-list-cards .property-card .purchase.active .more-photos .photos img {
+  width: 100px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 16px;
+}
+
+.components .property-list-cards .property-card .purchase.active .to-cart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffffff;
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.components .property-list-cards .property-card .purchase.active .to-cart .prop-price {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5rem;
+}
+
+.components .property-list-cards .property-card .purchase.active .to-cart .prop-price span:last-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.components .property-list-cards .property-card .purchase.active .to-cart .add-to-cart {
+  color: #e63c3c;
+}
+
+.components .property-list-cards .property-card .purchase.active .to-cart .add-to-cart i {
+  margin-left: .5rem;
+}
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 62px;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav i {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.nav i.active {
+  color: #e63c3c;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=style.css.map */
