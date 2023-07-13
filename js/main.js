@@ -48,8 +48,11 @@ properties.addEventListener("click", (event) =>{
         closeBtn.forEach(btn => {
             btn.addEventListener("click", ()=>{
                 propertyItems[itemIndex].querySelector(".purchase").classList.remove("active");
+                bodyScrollToggle();
             })
         });
+
+        bodyScrollToggle();
 
     }
 })
