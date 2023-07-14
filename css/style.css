@@ -216,7 +216,8 @@ i {
   display: none;
 }
 
-.components .property-list-cards .property-card .purchase.active {
+.components .property-popups {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -227,10 +228,13 @@ i {
   z-index: 100;
   overflow-y: scroll;
   padding-bottom: 6rem;
+}
+
+.components .property-popups.active {
   display: block;
 }
 
-.components .property-list-cards .property-card .purchase.active .prop-card-close {
+.components .property-popups .popup-close {
   position: fixed;
   width: 100%;
   top: 0;
@@ -241,45 +245,45 @@ i {
           box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.components .property-list-cards .property-card .purchase.active .main-image {
+.components .property-popups .main-image {
   height: 380px;
 }
 
-.components .property-list-cards .property-card .purchase.active .main-image img {
+.components .property-popups .main-image img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-bottom-right-radius: 100px;
 }
 
-.components .property-list-cards .property-card .purchase.active .prop-details {
+.components .property-popups .prop-details {
   padding: 1.5rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .prop-details h2,
-.components .property-list-cards .property-card .purchase.active .prop-details p {
+.components .property-popups .prop-details h2,
+.components .property-popups .prop-details p {
   margin-bottom: 1rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .more-photos {
+.components .property-popups .more-photos {
   padding-left: 1.5rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .more-photos h2 {
+.components .property-popups .more-photos h2 {
   margin-bottom: 1rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .more-photos .photos {
+.components .property-popups .more-photos .photos {
   gap: 1.5rem;
   overflow-x: scroll;
   padding-right: 1.5rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .more-photos .photos::-webkit-scrollbar-track {
+.components .property-popups .more-photos .photos::-webkit-scrollbar-track {
   display: none;
 }
 
-.components .property-list-cards .property-card .purchase.active .more-photos .photos img {
+.components .property-popups .more-photos .photos img {
   width: 100px;
   height: 120px;
   -o-object-fit: cover;
@@ -287,7 +291,7 @@ i {
   border-radius: 16px;
 }
 
-.components .property-list-cards .property-card .purchase.active .to-cart {
+.components .property-popups .to-cart {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -304,23 +308,23 @@ i {
           box-shadow: -8px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.components .property-list-cards .property-card .purchase.active .to-cart .prop-price {
+.components .property-popups .to-cart .prop-price {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   gap: .5rem;
 }
 
-.components .property-list-cards .property-card .purchase.active .to-cart .prop-price span:last-child {
+.components .property-popups .to-cart .prop-price span:last-child {
   font-size: 20px;
   font-weight: 500;
 }
 
-.components .property-list-cards .property-card .purchase.active .to-cart .add-to-cart {
+.components .property-popups .to-cart .add-to-cart {
   color: #e63c3c;
 }
 
-.components .property-list-cards .property-card .purchase.active .to-cart .add-to-cart i {
+.components .property-popups .to-cart .add-to-cart i {
   margin-left: .5rem;
 }
 
