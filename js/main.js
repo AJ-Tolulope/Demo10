@@ -2,6 +2,7 @@
 
 function bodyScrollToggle(){
     document.body.classList.toggle("hidden-scrolling");
+    console.log('clicked btn')
 }
 
 
@@ -9,7 +10,8 @@ function bodyScrollToggle(){
 const filterContainer = document.querySelector('.filter'),
 properties = document.querySelector('.property-item-cards'),
 propertyItems = document.querySelectorAll('.property-card'),
-closeBtn = document.querySelectorAll(".prop-card-close i");
+closeBtn = document.querySelector(".popup-close .back-btn"),
+propertyPopups = document.querySelector(".property-popups");
 
 // filter property items
 filterContainer.addEventListener("click", (event) =>{
@@ -38,21 +40,36 @@ properties.addEventListener("click", (event) =>{
     if(event.target.closest(".property-card-inner") && event.target.classList.contains("prop-img")){
         const property = event.target.closest(".property-card-inner").parentElement;
 
+        console.log('image clicked ' + property)
+
         // get the property index
         itemIndex = Array.from(property.parentElement.children).indexOf(property);
 
         if (propertyItems[itemIndex].querySelector(".purchase")) {
-            propertyItems[itemIndex].querySelector(".purchase").classList.add("active");
+            const purchaseContent = propertyItems[itemIndex].querySelector(".purchase").innerHTML;
+
+            propertyPopups.querySelector(".main-popup").innerHTML = purchaseContent;
+            propertyPopups.classList.toggle("active");
         }
-
-        closeBtn.forEach(btn => {
-            btn.addEventListener("click", ()=>{
-                propertyItems[itemIndex].querySelector(".purchase").classList.remove("active");
-                bodyScrollToggle();
-            })
-        });
-
         bodyScrollToggle();
 
     }
 })
+
+closeBtn.addEventListener("click", ()=>{
+    propertyPopups.classList.toggle("active")
+
+    bodyScrollToggle();
+});
+
+
+
+
+
+
+
+
+
+
+
+
