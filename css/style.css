@@ -227,7 +227,7 @@ i {
   background: #fff;
   z-index: 100;
   overflow-y: scroll;
-  padding-bottom: 6rem;
+  padding-bottom: 8rem;
 }
 
 .components .property-popups.active {
